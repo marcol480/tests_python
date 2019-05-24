@@ -1,0 +1,18 @@
+language: python
+
+install:
+  - pip install numpy pandas
+
+addons:
+  sonarcloud:
+    organization: "marcol480-github" # the key of the org you chose at step #3
+    token:
+      secure: 489dad0b417e1227ddf22adacbb91a8f6dd39099 # encrypted value of your token
+      
+script:
+  - python python/Dataanalysis.py
+    # other script steps might be done before running the actual analysis
+  - sonar-scanner
+
+  
+  
